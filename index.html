@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Neon Pinball</title>
+    <link rel="stylesheet" href="/theme/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- p5.js canvas will be inserted here -->
+    </div>
+
+    <div id="features-panel">
+        <h1 class="neon-text">🎮 Neon Pinball Features</h1>
+
+        <div class="feature-section">
+            <h2 class="feature-title">🎯 Core Gameplay</h2>
+            <ul class="feature-list">
+                <li>Interactive playfield with dynamic neon visual effects</li>
+                <li>Multiple obstacle types: flippers, bumpers, slingshots, spinners</li>
+                <li>Neon bar obstacles with different motion types</li>
+                <li>Plunger system with launch sound and visual feedback</li>
+            </ul>
+        </div>
+
+        <div class="feature-section">
+            <h2 class="feature-title">🚀 Physics & Collision System</h2>
+            <ul class="feature-list">
+                <li><span class="cyan-text"> 2D particle simulation: </span> Ball modeled as point mass with gravity,
+                    position, velocity
+                </li>
+                <li><span class="cyan-text">Symplectic Euler Integration: </span> Robust time-stepping ball dynamics
+                </li>
+                <li><span class="cyan-text">Signed Distance Fields (SDFs):</span> Environment modeling using 2D shape
+                    primitives</li>
+                <li>Real-time physics with ray marching collision detection</li>
+            </ul>
+        </div>
+
+        <div class="feature-section">
+            <h2 class="feature-title">🔧 Collision Processing</h2>
+            <ul class="feature-list">
+                <li><span class="cyan-text">Continuous Collision Detection: </span> Ray-marching SDFs to prevent
+                    skipping ball from skipping through moving obstacles.
+                </li>
+                <li><span class="cyan-text">Finite Difference Approximations: </span>
+                    Two-sided FD for accurate normals on complex geometry
+                </li>
+                <li><span class="cyan-text">Collision Impulses: </span> Slingshots apply directional kickback to the
+                    ball
+                </li>
+            </ul>
+        </div>
+
+        <div class="feature-section">
+            <h2 class="feature-title">🎨 Visual System</h2>
+            <ul class="feature-list">
+                <li>Vivid neon glow and ripple effects on impact</li>
+                <li>Dynamic hue shift animations</li>
+                <li>Screen shake and spark particles</li>
+                <li>Glow trails and combo banners</li>
+            </ul>
+        </div>
+
+        <div class="feature-section">
+            <h2 class="feature-title">🎵 Audio System</h2>
+            <ul class="feature-list">
+                <li>Responsive flipper sound effects</li>
+                <li>Bumper and slingshot collision sounds</li>
+                <li>Combo bonus sounds that scale with multiplier</li>
+                <li>Background music with dynamic transitions</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="utils/visuals.js"></script>
+    <script src="utils/vector.js"></script>
+    <script src="sdf.js"></script>
+    <script src="obstacle.js"></script>
+    <script src="ball.js"></script>
+    <script src="PinballGame.js"></script>
+</body>
+
+</html>
